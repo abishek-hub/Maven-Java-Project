@@ -1,6 +1,6 @@
 def remote = [:]
   remote.name = 'deployment'
-  remote.host = '172.31.19.196'
+  remote.host = '172.31.51.58'
   remote.user = 'centos'
   remote.password = 'Rnstech@123'
   remote.allowAnyHosts = true
@@ -11,13 +11,13 @@ node('build-server') {
     stage('Preparation') { // for display purposes
         
         // Get some code from a GitHub repository
-        git 'https://github.com/venkat09docs/Maven-Java-Project.git'
+        git 'https://github.com/abishek-hub/Maven-Java-Project'
 
 
         // Get the Maven tool.
         // ** NOTE: This 'M3' Maven tool must be configured
         // **       in the global configuration.
-        mvnHome = tool 'maven-3.6'        
+        mvnHome = tool 'maven-3.8'        
     }
     stage('Build') {
         // Run the maven build
